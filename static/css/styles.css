@@ -1,0 +1,194 @@
+/* Global Styles */
+:root {
+    --primary: #6c5ce7;
+    --primary-light: #a29bfe;
+    --accent: #00b894;
+    --text: #2d3436;
+    --text-light: #636e72;
+    --background: #f0f2f5;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+/* Card Styles */
+.card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.decorative-circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--primary-light);
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.decorative-circle.top-left {
+    width: 200px;
+    height: 200px;
+    top: -100px;
+    left: -100px;
+}
+
+.decorative-circle.bottom-right {
+    width: 250px;
+    height: 250px;
+    bottom: -150px;
+    right: -150px;
+}
+
+/* Typography */
+h1 {
+    color: var(--primary);
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    font-size: 2.2rem;
+}
+
+/* Joke Container */
+.joke-container {
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+#joke-text {
+    font-size: 1.2rem;
+    color: var(--text);
+    transition: color 0.3s ease;
+}
+
+/* Button Styles */
+.btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+}
+
+.btn:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn .btn-loading {
+    display: none;
+}
+
+.btn.loading .btn-text {
+    display: none;
+}
+
+.btn.loading .btn-loading {
+    display: inline-block;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
+}
+
+footer p {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+footer p:hover {
+    color: var(--primary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.joke-enter {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .card {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .joke-container {
+        min-height: 120px;
+    }
+    
+    #joke-text {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}

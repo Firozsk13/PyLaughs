@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤣 Joke Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="decorative-circle top-left"></div>
+            <div class="decorative-circle bottom-right"></div>
+            
+            <h1>🤣 Joke Generator</h1>
+            
+            <div class="joke-container">
+                <p id="joke-text">Click the button below to generate a joke !</p>
+            </div>
+            
+            <button id="generate-btn" class="btn">
+                <span class="btn-text">🎭 Get a Joke</span>
+                <span class="btn-loading">Generating...</span>
+            </button>
+            
+            <footer>
+                <p>Made with ❤️ and Python</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
